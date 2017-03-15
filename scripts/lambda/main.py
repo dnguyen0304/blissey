@@ -6,7 +6,7 @@ import twilio.twiml
 
 from blissey import services
 
-if sys.version_info == (2, 7):
+if sys.version_info >= (2, 7):
     import httplib as HttpStatusCode
     import urlparse as urllib_parse
     str = unicode
