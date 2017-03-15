@@ -14,8 +14,7 @@ cd scripts/lambda/
 zip -9r $file_path main.py
 
 # Compress the dependencies.
-cd ~/virtual-environments/blissey/lib/python2.7/site-packages
-# cd ../.virtual-environment/lib/python2.7/site-packages
+cd ../.virtual-environment/lib/python2.7/site-packages
 unzip -o blissey-$package_version-py2.7.egg
 rm -r EGG-INFO/
 zip -9r $file_path *
