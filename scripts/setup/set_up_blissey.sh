@@ -20,7 +20,8 @@ source .virtual-environment/bin/activate
 
 git clone https://github.com/dnguyen0304/blissey.git .
 git checkout tags/latest
+pip install --requirement=requirements.txt
 python setup.py install
 
-chown --recursive ubuntu:blissey /opt/tuxedomask/
+chown --recursive ubuntu:blissey /opt/blissey/
 chown --recursive ubuntu:blissey /var/log/blissey/
