@@ -5,7 +5,7 @@ import uuid
 
 from nose.tools import assert_equal, assert_in, assert_is_none, raises
 
-from blissey import application
+from blissey import services
 
 
 class MockPeopleRepository(object):
@@ -35,7 +35,7 @@ class TestBlisseyService(object):
         self.service = None
 
     def setup(self):
-        self.service = application.BlisseyService()
+        self.service = services.BlisseyService()
 
     def test_parse_message(self):
         message = 'set Bruiser Nguyen foo'
@@ -66,7 +66,7 @@ class TestBlisseyService(object):
     @raises(LookupError)
     def test_get_person_multiple_results(self):
         people_repository = MockPeopleRepository
-        service = application.BlisseyService(people_repository=people_repository)
+        service = services.BlisseyService(people_repository=people_repository)
         service._get_person(first_name='', last_name='')
 
     def test_get_todays_note(self):
@@ -81,6 +81,6 @@ class TestBlisseyService(object):
 
     def test_get_todays_note_no_results(self):
         notes_repository = MockNotesRepository
-        service = application.BlisseyService(notes_repository=notes_repository)
+        service = services.BlisseyService(notes_repository=notes_repository)
         todays_note = service._get_todays_note(person=None)
         assert_is_none(todays_note)

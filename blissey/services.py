@@ -161,4 +161,3 @@ class BlisseyService(object):
                 todays_note = comments[most_recent_created_at]
 
         return todays_note
-

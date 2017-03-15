@@ -4,7 +4,7 @@ import sys
 
 import twilio.twiml
 
-from blissey import application
+from blissey import services
 
 if sys.version_info == (2, 7):
     import httplib as HttpStatusCode
@@ -17,7 +17,7 @@ elif sys.version_info >= (3, 0):
 
 def handler(event, context):
 
-    blissey_service = application.BlisseyService()
+    blissey_service = services.BlisseyService()
 
     query = urllib_parse.parse_qs(event['body'])
     message = query['Body'][0]
