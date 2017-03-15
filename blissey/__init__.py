@@ -4,7 +4,7 @@ import json
 import logging.config
 import os
 
-__all__ = ['application', 'configuration']
+__all__ = ['configuration', 'services']
 
 
 def get_configuration(application_name):
