@@ -4,6 +4,9 @@
 ##### Changes
 - Changed logging convention
 
+##### Features
+- Added architecture diagram
+
 ##### Fixes
 - Fixed inconsistent documentation header style
 
