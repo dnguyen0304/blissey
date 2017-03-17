@@ -12,6 +12,7 @@ git commit --message "PROJECT-1: foo"
 git commit --message "foo"
 ```
 
+## Python
 ### General
 - Documentation **must** adhere to the [NumPy / SciPy specifications](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt).
 - Packages **should** have `__all__` indices in their `__init__.py`.
