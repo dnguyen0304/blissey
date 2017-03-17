@@ -1,9 +1,7 @@
-Introduction
-------------
+# Introduction
 This document adheres to the specifications outlined in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-Source Control
---------------
+## Version Control
 ### Commit Messages
 - Issue IDs **should** be included.
 ```
