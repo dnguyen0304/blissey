@@ -1,6 +1,9 @@
 # Release Notes
 
 ## v1.0.1 (Pending)
+##### Changes
+- Changed logging convention
+
 ##### Fixes
 - Fixed inconsistent documentation header style
 
