@@ -3,6 +3,7 @@
 ## v1.1.0 (Pending)
 ##### Features
 - Added architecture diagram.
+- Added Dockerfile for building Blissey.
 
 ##### Fixes
 - Fixed `setup.py` including nonessential dependencies.
