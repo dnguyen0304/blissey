@@ -46,3 +46,11 @@ sudo docker run --rm \
                 --volume $(pwd):/tmp/build \
                 dnguyen0304/blissey-blissey-buildtime:<tag>
 ```
+
+### Pushing
+Push the buildtime image.
+```
+# NOTE: Remember to replace the `<tag>` placeholder.
+
+sudo docker push dnguyen0304/blissey-blissey-buildtime:<tag>
+```
