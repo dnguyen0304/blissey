@@ -7,21 +7,23 @@ if __name__ == '__main__':
     package_name = 'blissey'
 
     description = 'A personal relationship management (PRM) platform.'
-    url = 'https://github.com/dnguyen0304/{}.git'.format(package_name)
 
     with open('./README.md', 'r') as file:
         long_description = file.read()
-    with open('./requirements.txt', 'r') as file:
-        install_requires = file.read().splitlines()
+
+    install_requires = ['jira==1.0.10',
+                        'python-dateutil==2.6.0',
+                        'twilio==5.7.0']
 
     setuptools.setup(name=package_name,
-                     version='1.0.0',
+                     version='1.1.0',
                      description=description,
                      long_description=long_description,
-                     url=url,
+                     url='https://github.com/dnguyen0304/blissey.git',
                      author='Duy Nguyen',
                      author_email='dnguyen0304@gmail.com',
                      license='MIT',
+                     classifiers=['Programming Language :: Python :: 2.7'],
                      packages=setuptools.find_packages(exclude=['*.tests']),
                      install_requires=install_requires,
                      test_suite='nose.collector',
