@@ -1,18 +1,21 @@
 # Blissey
 A personal relationship management (PRM) platform.
 
-Getting Started
----------------
-### General
+## Getting Started
+### Installation
+Get a local copy of the repository.
 ```
-$ git clone https://github.com/dnguyen0304/blissey.git
-$ cd blissey
-$ git checkout tags/latest
+# Remember to replace the `<tag>` placeholder.
+
+git clone https://github.com/dnguyen0304/blissey.git
+cd blissey/blissey
+git checkout tags/<tag>
 ```
 
+Update the configuration files in the `configuration` directory. Then build Blissey.
 ```
-$ cd scripts/setup
-$ sudo ./set_up_blissey
+sudo docker build --file Dockerfile .
+sudo docker run --rm --volume $(pwd):/tmp/build <images_id>
 ```
 
 Configuration
