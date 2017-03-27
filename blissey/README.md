@@ -2,27 +2,47 @@
 A personal relationship management (PRM) platform.
 
 ## Getting Started
-### Installation
-Get a local copy of the repository.
+### Installing
+Get a local copy of the repository and then install the package.
 ```
-# Remember to replace the `<tag>` placeholder.
+# NOTE: Remember to replace the `<tag>` placeholder.
 
 git clone https://github.com/dnguyen0304/blissey.git
 cd blissey/blissey
 git checkout tags/<tag>
+
+python setup.py install
 ```
 
-Update the configuration files in the `configuration` directory. Then build Blissey.
+### Configuring
+Set the environment variables for the current and all future shell sessions.
 ```
-sudo docker build --file Dockerfile .
-sudo docker run --rm --volume $(pwd):/tmp/build <images_id>
+# NOTE: Remember to replace the `<environment>` placeholder.
+
+echo 'export BLISSEY_CONFIGURATION_FILE_PATH=/opt/blissey/configuration/blissey.<environment>.config"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-Configuration
--------------
-### Shell Environment
-When building from source or outside a Docker container, to set the environment variables for the current and all future shell sessions, from the terminal run
+### Running
+Run an example.
 ```
-$ echo 'export BLISSEY_CONFIGURATION_FILE_PATH=/opt/blissey/configuration/blissey.development.config"' >> ~/.bashrc
-$ source ~/.bashrc
+# Remember to replace the `<first_name>` and `<last_name>` placeholders.
+
+from blissey import services
+
+blissey_service = services.BlisseyService()
+blissey_service.add_note(message='set <first_name> <last_name> Hello, World!')
+```
+
+### Building
+Update the configuration files in the `configuration` directory and then build the package.
+```
+# NOTE: Remember to replace the `<tag>` placeholder.
+
+sudo docker build --file Dockerfile \
+                  --tag dnguyen0304/blissey-blissey-buildtime:<tag> \
+                  .
+sudo docker run --rm \
+                --volume $(pwd):/tmp/build \
+                dnguyen0304/blissey-blissey-buildtime:<tag>
 ```
