@@ -10,7 +10,7 @@ fi
 mkdir ${SHARED_VOLUME}/build ${package}
 
 # Include the source code.
-cp -r ${SHARED_VOLUME}/src ${package}/${COMPONENT}
+cp -r ${SHARED_VOLUME}/${COMPONENT} ${package}/${COMPONENT}
 
 # Include the dependencies.
 pip install --no-cache \
