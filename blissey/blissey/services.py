@@ -120,8 +120,10 @@ class BlisseyService(object):
             If there were multiple results.
         """
 
-        jql = 'summary ~ "{first_name}" AND summary ~ "{last_name}"'.format(
-            first_name=first_name, last_name=last_name)
+        jql = ' AND '.join(
+            '(summary ~ "{0}" OR Keywords ~ "{0}")'.format(name_part)
+            for name_part
+            in (first_name, last_name))
         self.logger.debug(msg='JQL query is executing <{}>.'.format(jql))
         results = self._people_repository.search_issues(jql_str=jql)
 

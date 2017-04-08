@@ -2,6 +2,7 @@
 
 ## v1.1.0 (Pending)
 ##### Features
+- Changed search to include keywords (`ME-628`).
 - Added architecture diagram.
 - Added Dockerfile for building Blissey.
 

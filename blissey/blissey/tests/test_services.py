@@ -3,7 +3,11 @@
 import collections
 import uuid
 
-from nose.tools import assert_equal, assert_in, assert_is_none, raises
+from nose.tools import (assert_equal,
+                        assert_in,
+                        assert_is_none,
+                        assert_is_not_none,
+                        raises)
 
 from blissey import services
 
@@ -68,6 +72,13 @@ class TestBlisseyService(object):
         people_repository = MockPeopleRepository
         service = services.BlisseyService(people_repository=people_repository)
         service._get_person(first_name='', last_name='')
+
+    def test_get_person_search_includes_keywords(self):
+        first_name = 'Brewzer'
+        last_name = 'Nguyen'
+        person = self.service._get_person(first_name=first_name,
+                                          last_name=last_name)
+        assert_is_not_none(person)
 
     def test_get_todays_note(self):
         person = self.service._get_person(first_name='Bruiser',
